@@ -14,8 +14,7 @@ public class GUI {
         frame.setLayout(null);
         //frame.setSize(1920, 1080);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //COULD ALSO USE THIS
+        frame.setLayout(null);//COULD ALSO USE THIS
         frame.setVisible(true);
 
         panel = new JPanel();
@@ -26,15 +25,35 @@ public class GUI {
         panel.setVisible(true);
         frame.add(panel);
 
-        panel.add(new JButton("1"));
-        panel.add(new JButton("2"));
-        panel.add(new JButton("3"));
-        panel.add(new JButton("4"));
-
+        JButton btn1 = new JButton();
+        ButtonCreator(btn1,panel,"1");
+        JButton btn2 = new JButton();
+        ButtonCreator(btn2,panel,"2");
+        JButton btn3 = new JButton();
+        ButtonCreator(btn3,panel,"3");
+        JButton btn4 = new JButton();
+        ButtonCreator(btn4,panel,"4");
+        JButton btn5 = new JButton();
+        ButtonCreator(btn5,panel,"5");
+        JButton btn6 = new JButton();
+        ButtonCreator(btn6,panel,"6");
+        JButton btn7 = new JButton();
+        ButtonCreator(btn7,panel,"7");
+        JButton btn8 = new JButton();
+        ButtonCreator(btn8,panel,"8");
+        JButton btn9 = new JButton();
+        ButtonCreator(btn9,panel,"9");
         frame.pack();
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     public static void main(String[] args) {
         new GUI();
+    }
+    public void ButtonCreator(JButton btn, JPanel panel, String txt){
+        btn.setText(txt);
+        btn.setVisible(true);
+        btn.setFont(new Font("Monospaced",Font.BOLD,72));
+        panel.add(btn);
     }
 }
