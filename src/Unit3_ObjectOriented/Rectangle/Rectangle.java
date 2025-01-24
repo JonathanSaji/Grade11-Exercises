@@ -1,6 +1,8 @@
 package Unit3_ObjectOriented.Rectangle;
 
-public class Rectangle {//implements Comparable {
+import org.w3c.dom.css.Rect;
+
+public class Rectangle implements Comparable {
 
     private int length;
     private int width;
@@ -40,21 +42,44 @@ public class Rectangle {//implements Comparable {
     public String toString(){
         return "Width: " + width + " Length: " + length;
     }
+    @Override
+    public int compareTo(Object o) {
+        if(o instanceof Rectangle){
+            Rectangle r = (Rectangle)o;
+            if(r.getLength() == this.getLength()){
+                return 0;
+            }
+            else if(r.getLength() > this.getLength()){
+                return 1;
+            }
+            else if(r.getLength() < this.getLength()){
+                return -1;
+            }
+            if(r.getWidth() == this.getWidth()){
+                return 0;
+            }
+            else if(r.getWidth() > this.getWidth()){
+                return 1;
+            }
+            else if(r.getWidth() < this.getWidth()){
+                return -1;
+            }
+        }
+        return -1;
+    }
+
+
+
     public boolean equals(Object o){
         if(o instanceof Rectangle){
             Rectangle r = (Rectangle)o;
-            if(r.getLength() == getLength() && r.getWidth() == getWidth() && r.getPerimeter() == getPerimeter()
-            && r.getArea() == getArea()){
+            if(r.getLength() == getLength() && r.getWidth() == getWidth() &&
+            r.getArea() == getArea() && r.getPerimeter() == getPerimeter()){
                 return true;
             }
         }
         return false;
     }
-
-//    @Override
-//    public int compareTo(Object o) {
-//
-//    }
 }
 
 

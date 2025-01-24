@@ -8,7 +8,7 @@ public class BinarySearch {
         int[] array = {4, 5, 1, 2, 3};
         System.out.println(Arrays.toString(BubbleSort(array)));
         int[] sorted_array = BubbleSort(array);
-        System.out.println(BinaryS(sorted_array, 3));
+        System.out.println(BinaryS(sorted_array, 5));
     }
 
     public static int[] BubbleSort(int[] a) {
@@ -28,7 +28,7 @@ public class BinarySearch {
     public static int BinaryS(int[] a, int element){
 
     int min = 0;
-    int max = a.length -1;
+    int max = a.length;
     int mid;
     while(min < max){
         mid = (min +max)/2;
@@ -36,10 +36,10 @@ public class BinarySearch {
             return mid;
         }
         else if(a[mid] > element){
-            max = mid +1;
+           max = mid -1;
         }
         else{
-            min = mid ;
+            min = mid +1;
         }
     }
         return -1;
